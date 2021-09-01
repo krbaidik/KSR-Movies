@@ -15,7 +15,7 @@
         </div>
         @endif
             <form method="POST" action="{{ route('login') }}">
-                {{ csrf_field() }}
+                @csrf
                 <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
                     <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}"
                            autofocus>
