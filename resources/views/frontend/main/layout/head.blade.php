@@ -84,5 +84,5 @@
   </header><!-- End Header -->
 
   <div class="telephone">
-    <i class="bi bi-telephone"></i><span class="phone"> {{ $profile->phone}} </span>
+    <i class="bi bi-telephone"></i><span class="phone"> {{ $profile->phone ?? ''}} </span>
   </div>
