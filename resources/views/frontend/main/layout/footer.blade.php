@@ -3,7 +3,7 @@
     <div class="container">
       <div class="footr">
         <div>
-           @if($profile->footer_logo)
+           @if($profile)
       <img src="{{ asset('images/company_profile/'.$profile->footer_logo)}}" class="img img-fluid" width="600" align="center" alt="{{ $profile->footer_logo }}">
       @endif 
         </div>
