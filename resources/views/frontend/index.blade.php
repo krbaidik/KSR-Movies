@@ -5,7 +5,7 @@
   <meta name="description" content="{{ $profile->short_intro ?? '' }}" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ $profile->name }} - Home" />
+  <meta property="og:title" content="{{ $profile->name ?? '' }} - Home" />
   <meta property="og:description" content="{{ $profile->short_intro ?? ''}}" />
   <meta property="og:url" content="{{ $profile->website ?? ''}}" />
   <meta property="og:site_name" content="{{ $profile->name ?? '' }}" />
@@ -188,7 +188,6 @@
       </div>
 
       <div class="container mb-4">
-        <!-- {!! $profile->google_map?? '' !!} -->
         <iframe src="https://www.google.com/maps/embed?pb={{ $profile->google_map ?? '!1m18!1m12!1m3!1d3594417.591740521!2d81.88571547673442!3d28.383829327799834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995e8c77d2e68cf%3A0x34a29abcd0cc86de!2sNepal!5e0!3m2!1sen!2snp!4v1629526819552!5m2!1sen!2snp'}}" width="100%" height="300" style="border:2px solid gray;" allowfullscreen="" title="ksr movies map location"></iframe>
       </div>
 
