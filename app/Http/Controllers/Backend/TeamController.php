@@ -109,7 +109,10 @@ class TeamController extends Controller
            $image->move(public_path().'/images/teams', $image_name);
            $req->request->add(['image' => $image_name]);
            if($team->image){
+            if(file_exists(public_path().'/images/teams/'.$team->image)){
+                
            unlink(public_path().'/images/teams/'.$team->image);
+            }
            }
        }
         $team->update([

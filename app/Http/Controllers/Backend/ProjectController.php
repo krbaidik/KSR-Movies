@@ -136,7 +136,10 @@ class ProjectController extends Controller
            $image->move(public_path().'/images/projects', $image_name);
            $request->request->add(['image' => $image_name]);
            if($project->image){
+            if(file_exists(public_path().'/images/projects/'.$project->image)){
+                
            unlink(public_path().'/images/projects/'.$project->image);
+            }
            }
        }
         $project->update([

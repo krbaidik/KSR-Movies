@@ -107,7 +107,10 @@ class UserController extends Controller
            $image->move(public_path().'/images/users', $image_name);
            $request->request->add(['image' => $image_name]);
            if($user->image){
+            if(file_exists(public_path().'/images/users/'.$user->image)){
+                
            unlink(public_path().'/images/users/'.$user->image);
+            }
            }
        }
         $user->update([

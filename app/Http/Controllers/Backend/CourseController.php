@@ -140,7 +140,10 @@ class CourseController extends Controller
            $image->move(public_path().'/images/courses', $image_name);
            $request->request->add(['image' => $image_name]);
            if($course->image){
+            if(file_exists(public_path().'/images/courses/'.$course->image)){
+                
            unlink(public_path().'/images/courses/'.$course->image);
+            }
            }
        }
         $course->update([

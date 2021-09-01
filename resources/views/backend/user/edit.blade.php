@@ -55,11 +55,8 @@
                             <div class="form-group">
                                 <label for="password">Do you want to change Password ? <input type="checkbox" name="yes" class="yes"> Yes</label>
                             </div>
+                            <div class="pass"></div>
 
-                            <div class="form-group password">
-                                <label for="password">Password</label>
-                                <input class="form-control" id="password" placeholder="Password" type="password" name="password">
-                            </div>
                             <div class="form-group">
                                 <label for="mname">Address</label>
                                 <input class="form-control" id="mname" placeholder="Type address" type="text" name="address" value="{{$data['users']->address}}">
@@ -107,13 +104,15 @@
 @section('jsforpage')
     
     <script type="text/javascript">
-        $('.password').hide();
-
         $('.yes').on('change', function(){
             if(this.checked){
-            $('.password').show();
+            $password_field = `<div class="form-group password">
+                                <label for="password" class="text-success">Password</label>
+                                <input class="form-control" id="password" placeholder="Password" type="password" name="password" value="">
+                            </div>`;
+            $('.pass').append($password_field);
             }else{
-        $('.password').hide();
+                $('.password').remove();
             }
         })
     </script>

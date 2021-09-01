@@ -135,7 +135,10 @@ class ServiceController extends Controller
            $image->move(public_path().'/images/services', $image_name);
            $request->request->add(['image' => $image_name]);
            if($service->image){
+            if(file_exists(public_path().'/images/services/'.$Service->image)){
+                
            unlink(public_path().'/images/services/'.$Service->image);
+            }
            }
        }
         $service->update([

@@ -138,7 +138,9 @@ class CompanyProfileController extends Controller
            $image->move(public_path().'/images/company_profile', $image_name);
            $request->request->add(['short_intro_image' => $image_name]);
            if($data->short_intro_image){
+            if(file_exists(public_path().'/images/company_profile/'. $data->short_intro_image)){
             unlink(public_path().'/images/company_profile/'. $data->short_intro_image);
+            }
            }
        }
 
@@ -149,7 +151,9 @@ class CompanyProfileController extends Controller
            $image->move(public_path().'/images/company_profile', $image_name);
            $request->request->add(['m_banner' => $image_name]);
            if($data->m_banner){
+            if(file_exists(public_path().'/images/company_profile/'. $data->m_banner)){
             unlink(public_path().'/images/company_profile/'. $data->m_banner);
+            }
            }
        }
 
@@ -160,7 +164,9 @@ class CompanyProfileController extends Controller
            $image->move(public_path().'/images/company_profile/', $image_name);
            $request->request->add(['main_logo' => $image_name]);
            if($data->main_logo){
+            if(file_exists(public_path().'/images/company_profile/'. $data->main_logo)){
             unlink(public_path().'/images/company_profile/'. $data->main_logo);
+            }
            }
        }
 
@@ -171,7 +177,9 @@ class CompanyProfileController extends Controller
            $image->move(public_path().'/images/company_profile', $image_name);
            $request->request->add(['footer_logo' => $image_name]);
            if($data->footer_logo){
+            if(file_exists(public_path().'/images/company_profile/'. $data->footer_logo)){
             unlink(public_path().'/images/company_profile/'. $data->footer_logo);
+            }
            }
        }
 
@@ -182,7 +190,9 @@ class CompanyProfileController extends Controller
            $image->move(public_path().'/images/company_profile', $image_name);
            $request->request->add(['login_logo' => $image_name]);
            if($data->login_logo){
+            if(file_exists(public_path().'/images/company_profile/'. $data->login_logo)){
             unlink(public_path().'/images/company_profile/'. $data->login_logo);
+            }
            }
        }
 
@@ -193,7 +203,10 @@ class CompanyProfileController extends Controller
            $image->move(public_path().'/images/company_profile', $image_name);
            $request->request->add(['fav_icon' => $image_name]);
            if($data->fav_icon){
+            if(file_exists(public_path()."/images/company_profile/". $data->fav_icon)){
+                
             unlink(public_path()."/images/company_profile/". $data->fav_icon);
+            }
            }
        }
        
