@@ -1,13 +1,34 @@
-@include('frontend/main/layout/head')
+@extends('frontend.main.layout.master')
 
+@section('seo')
+  <title>Home - {{ $profile->name ?? ''}}</title>
+  <meta name="description" content="{{ $profile->short_intro ?? '' }}" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ $profile->name }} - Home" />
+  <meta property="og:description" content="{{ $profile->short_intro ?? ''}}" />
+  <meta property="og:url" content="{{ $profile->website ?? ''}}" />
+  <meta property="og:site_name" content="{{ $profile->name ?? '' }}" />
+  @if($profile)
+  <meta property="og:image" content="{{ asset('images/company_profile/'.$profile->main_logo)}}" />
+  @endif
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="800" />
+  <meta content="no-cache" http-equiv="Cache-Control"/>
+  <meta content="0" http-equiv="Expires"/>
+  <meta content="Ksr Movies" name="copyright"/>
+
+@endsection
+
+@section('indexactive')
+  active
+@endsection
+
+@section('content')
 <section id="home">
 
     <div class="home-content" data-aos="fade-up">
-      <h2>{!! $profile->short_intro_title ?? '' !!}</h2>
-      <div class="startbtn">
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-        <a href="#projects" class="btn-projects scrollto">Our Projects</a>
-      </div>
+      <h2 class="main_text">{!! $profile->short_intro_title ?? '' !!}</h2>
     </div>
 
     <div class="home-slider swiper-container">
@@ -15,7 +36,7 @@
         <video autoplay muted loop id="myVideo">
           <source src="{{ asset('video/ksr.mp4') }}" type="video/mp4">
         </video>
-        {{-- <div class="swiper-slide" style="background-image: url({{ asset('images/company_profile/'.$profile->m_banner ?? '') }} );"></div>
+        {{-- <div class="swiper-slide" style="background-image: url('');"></div>
       </div> --}}
     </div>
 
@@ -29,7 +50,7 @@
         <div class="row">
           <div class="col-lg-6 about-img">
             @if($profile)
-            <img src="{{ asset('images/company_profile/'.$profile->short_intro_image ?? '') }}" alt="">
+            <img src="{{ asset('images/company_profile/'.$profile->short_intro_image ?? '') }}" alt="{{ $profile->short_intro_image}}">
             @endif
           </div>
 
@@ -44,7 +65,7 @@
 
     <!-- ======= Services Section ======= -->
     <section id="services">
-      <div class="container" data-aos="fade-up">
+      <div class="container" data-aos="fade-right">
         <div class="section-header">
           <h2>Services <span class="btn btn-info"><a href="/services" class="all">All</a></span></h2>
         </div>
@@ -54,7 +75,7 @@
           @php
             $delay = 100;
           @endphp
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="{{ $delay }}">
+          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="{{ $delay }}">
             <div class="box">
               <div class="icon"><img src="{{ asset('images/services/'.$service->image) }}" alt="{{$service->image}}" width="200" class="img img-thumbnail m-2"></div>
               <h4 class="title"><a href="">{{ $service->title}}</a></h4>
@@ -72,48 +93,21 @@
       </div>
     </section><!-- End Services Section -->
 
-    <!-- ======= Clients Section ======= -->
-    {{-- <section id="clients">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>Clients</h2>
-          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
-        </div>
-
-        <div class="clients-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section> --}}<!-- End Clients Section -->
-
     <!-- ======= Projects Section ======= -->
     <section id="projects" class="portfolio">
-      <div class="container" data-aos="fade-up">
+      <div class="container" data-aos="fade-left">
         <div class="section-header">
           <h2>Projects <span class="btn btn-info m-2"><a href="/projects" class="all">All</a></span><span class="btn btn-danger m-2"><a href="/upcoming-projects" class="all">Upcoming</a></span></h2>
         </div>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row portfolio-container" data-aos="fade-left" data-aos-delay="200">
           @forelse($data['projects'] as $index=>$project)
 
           <div class="col-lg-4 col-md-6 portfolio-item">
             <img src="{{ asset('images/projects/'.$project->image)}}" class="img-fluid" alt="{{ $project->image}}">
             <div class="portfolio-info">
               <h4>{{ $project->title}}</h4>
-              <p>{!! substr($project->description, 0,30)!!}</p>
-              <a href="{{ asset('images/projects/'.$project->image)}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="{{ $project->title}}"><i class="bx bx-plus"></i></a>
-              <a href="{{ route('frontend.projectdetail',$project->slug) }}" class="details-link" title="View detail"><i class="bx bx-link"></i></a>
+                  <a href="{{ route('frontend.projectdetail',$project->slug) }}" class="btn btn-warning" title="View detail"><i class="bi bi-eye"></i> View</a>
             </div>
           </div>
           @empty
@@ -125,56 +119,9 @@
       </div><br>
     </section><!-- End Portfolio Section -->
 
-    <!-- ======= Testimonials Section ======= -->
-    {{-- <section id="testimonials">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>Testimonials</h2>
-          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
-        </div>
-
-        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <img src="assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  <img src="assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
-                </p>
-                <img src="assets/img/testimonial-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section> --}}<!-- End Testimonials Section -->
-
-    <!-- ======= Call To Action Section ======= -->
-    {{-- <section id="call-to-action">
-      <div class="container" data-aos="zoom-out">
-        <div class="row">
-          <div class="col-lg-9 text-center text-lg-start">
-            <h3 class="cta-title">Call To Action</h3>
-            <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
-          </div>
-        </div>
-      </div>
-    </section> --}}<!-- End Call To Action Section -->
-
     <!-- ======= Team Section ======= -->
     <section id="team">
-      <div class="container" data-aos="fade-up">
+      <div class="container" data-aos="zoom-in-up">
         <div class="section-header">
           <h2>Our Team</h2>
         </div>
@@ -187,10 +134,10 @@
                 <h4>{{ $team->name}}</h4>
                 <span>{{ $team->position}}</span>
                 <div class="social">
-                  <a href="{{ $team->twitter_url ?? ''}}"><i class="bi bi-twitter"></i></a>
-                  <a href="{{ $team->facebook_url ?? ''}}"><i class="bi bi-facebook"></i></a>
-                  <a href="{{ $team->instagram_url ?? ''}}"><i class="bi bi-instagram"></i></a>
-                  <a href="{{ $team->youtube_url ?? ''}}"><i class="bi bi-youtube"></i></a>
+                  <a href="{{ $team->twitter_url ?? ''}}"><i class="bi bi-twitter" title="twitter"></i></a>
+                  <a href="{{ $team->facebook_url ?? ''}}"><i class="bi bi-facebook" title="facebook"></i></a>
+                  <a href="{{ $team->instagram_url ?? ''}}"><i class="bi bi-instagram" title="instagram"></i></a>
+                  <a href="{{ $team->youtube_url ?? ''}}"><i class="bi bi-youtube" title="youtube"></i></a>
                 </div>
               </div>
             </div>
@@ -241,10 +188,14 @@
       </div>
 
       <div class="container mb-4">
-        {!! $profile->google_map?? '' !!}
+        <!-- {!! $profile->google_map?? '' !!} -->
+        <iframe src="https://www.google.com/maps/embed?pb={{ $profile->google_map ?? '!1m18!1m12!1m3!1d3594417.591740521!2d81.88571547673442!3d28.383829327799834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995e8c77d2e68cf%3A0x34a29abcd0cc86de!2sNepal!5e0!3m2!1sen!2snp!4v1629526819552!5m2!1sen!2snp'}}" width="100%" height="300" style="border:2px solid gray;" allowfullscreen="" title="ksr movies map location"></iframe>
       </div>
 
       <div class="container">
+        <div class="section-header">
+          <h2>Give Feedback</h2>
+        </div>
         <div class="form">
           <form action="/msgsubmit" method="post">
             @csrf
@@ -275,5 +226,4 @@
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
-
-@include('frontend/main/layout/footer')
+  @endsection

@@ -53,8 +53,12 @@
                                 <input class="form-control" id="email" placeholder="Type email" type="email" name="email" value="{{$data['users']->email}}">
                             </div>
                             <div class="form-group">
+                                <label for="password">Do you want to change Password ? <input type="checkbox" name="yes" class="yes"> Yes</label>
+                            </div>
+
+                            <div class="form-group password">
                                 <label for="password">Password</label>
-                                <input class="form-control" id="password" placeholder="Password" type="password" name="password" value="{{$data['users']->password}}">
+                                <input class="form-control" id="password" placeholder="Password" type="password" name="password">
                             </div>
                             <div class="form-group">
                                 <label for="mname">Address</label>
@@ -99,6 +103,20 @@
 
     </section>
 
+@endsection
+@section('jsforpage')
+    
+    <script type="text/javascript">
+        $('.password').hide();
+
+        $('.yes').on('change', function(){
+            if(this.checked){
+            $('.password').show();
+            }else{
+        $('.password').hide();
+            }
+        })
+    </script>
 @endsection
 
 

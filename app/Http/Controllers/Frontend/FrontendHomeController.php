@@ -56,12 +56,14 @@ class FrontendHomeController extends Controller
 
     public function project(){
         $data = [];
+        $data['project_type']  = 'All Projects';
         $data['projects'] = Project::where([['status','1']])->latest()->get();
         return view('frontend.project.project',compact('data'));
     }
 
     public function upcomingProject(){
         $data = [];
+        $data['project_type']  = 'Upcoming Projects';
         $data['projects'] = Project::where([['status','1'],['upcoming_project','1']])->latest()->get();
         return view('frontend.project.project',compact('data'));
     }

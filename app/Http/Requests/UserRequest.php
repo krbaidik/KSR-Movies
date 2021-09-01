@@ -26,7 +26,7 @@ class UserRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => request()->method == 'POST' ? 'required|unique:users': 'required',
-            'password' => 'required',
+            'password' => request()->method == 'POST' ? 'required': 'nullable',
         ];
     }
 }

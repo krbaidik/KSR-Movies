@@ -1,61 +1,4 @@
-<!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="footr">
-        <div>
-           @if($profile->footer_logo)
-      <img src="{{ asset('images/company_profile/'.$profile->footer_logo)}}" class="img img-fluid" width="600" align="center" alt="{{ $profile->footer_logo }}">
-      @endif 
-        </div>
-        <div class="copyright">
-        
-        Copyright <strong>&copy; {{ $profile->name?? 'KSR'}}</strong>. All Rights Reserved. {{ date('Y')}} <br>
-        Developed by <a href="https://www.facebook.com/krbaidik" target="_blank" class="text-success" title="Khubi Ram Baidik">Krbaidik</a>
-      </div>
-        
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center" title="Goto Top"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Js Files -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.0-alpha.37/swiper-bundle.min.js"></script>
-
-  <script type="text/javascript">  
-
-// clock 
-        function startTime() {
-          const today = new Date();
-          let h = today.getHours();
-          let m = today.getMinutes();
-          let s = today.getSeconds();
-          m = checkTime(m);
-          s = checkTime(s);
-          h = checkTime(h);
-          if (h > 12) {
-            h -= 12;
-            am_pm = "pm";
-          }
-            if (h == 0) {
-                h = 12;
-                am_pm = "am";
-          }
-          document.getElementById('time').innerHTML =  h + ":" + m + ":" + s+ " "+ am_pm;
-        }
-          setInterval(startTime, 1000);
-
-        function checkTime(i) {
-          if (i < 10) {i = "0" + i};
-          return i;
-        }
-
-
-    (function() {
+(function() {
   /**
    * Easy selector helper function
    */
@@ -238,12 +181,3 @@
   });
 
 })()
-    
-  </script>
-
-  <script>
-  AOS.init();
-</script>
-</body>
-
-</html>

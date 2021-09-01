@@ -1,11 +1,12 @@
 @extends('backend.auth.layout')
+  <title>Login - {{ $profile->name ?? ''}}</title>
 @section('title')
     Login Page
 @endsection
 @section('content')
 
     <div class="login-box">
-        <h2 class="login-box-msg"><b>Login</b></h2>
+        <h2 class="login-box-msg"><b>LOGIN</b></h2>
         <!-- /.login-logo -->
         <div class="login-box-body">
             @if($profile)
@@ -16,7 +17,7 @@
             <form method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
                 <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
-                    <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}" required
+                    <input type="email" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}"
                            autofocus>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     @if ($errors->has('email'))
