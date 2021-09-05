@@ -25,20 +25,46 @@
 @endsection
 
 @section('content')
+
 <section id="home">
+@if(count($data['sliders']) > 0)
+    <div class="home-slider">
 
-    <div class="home-content" data-aos="fade-up">
-      <h2 class="main_text">{!! $profile->short_intro_title ?? '' !!}</h2>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    @foreach($data['sliders'] as $index=>$slider)
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ $index }}" class="@if($index == '0') active @endif" aria-current="true" aria-label="Slide {{ $index }}"></button>
+    @endforeach
+  </div>
+  <div class="carousel-inner">
+  @foreach($data['sliders'] as $index=>$slider)
+    <div class="carousel-item @if($index == '0') active @endif">
+      <img src="{{ asset('images/sliders/'.$slider->slider_image)}}" class="d-block w-100" alt="{{ $slider->title}}">
+      <div class="carousel-caption d-md-block">
+        <p class="carousel_text">{{ $slider->title}}</p>
+      </div>
     </div>
+    @endforeach
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" title="Previous">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" title="Next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
 
-    <div class="home-slider swiper-container">
+@else
       <div class="swiper-wrapper">
         <video autoplay muted loop id="myVideo">
           <source src="{{ asset('video/ksr.mp4') }}" type="video/mp4">
         </video>
-        {{-- <div class="swiper-slide" style="background-image: url('');"></div>
-      </div> --}}
-    </div>
+      </div>
+@endif
+
 
   </section><!-- End home Section -->
 

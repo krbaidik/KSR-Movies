@@ -12,6 +12,7 @@ use App\Models\CourseType;
 use App\Models\Project;
 use App\Models\Notice;
 use App\Models\Video;
+use App\Models\Slider;
 
 class FrontendHomeController extends Controller
 {
@@ -22,6 +23,7 @@ class FrontendHomeController extends Controller
         $data['teams'] = Team::where([['status','1']])->latest()->get();
         $data['services'] = Service::where([['status','1']])->latest()->take(4)->get();
         $data['projects'] = Project::where([['status','1']])->latest()->take(6)->get();
+        $data['sliders'] = Slider::where([['status','1']])->latest()->take(6)->get();
         return view('frontend.index',compact('data'));
     }
 

@@ -41,6 +41,20 @@
                 </ul>
             </li>
 
+            {{--Slider--}}
+            <li class="treeview {{ Request::is('backend/sliders*')?'active':'' }}">
+                <a href="{{ route('backend.sliders.index') }}">
+                    <i class="fa fa-sliders"></i> <span>Slider</span>
+                    <span class="pull-right-container">
+             <i class="fa fa-angle-left pull-right"></i>
+           </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ Request::is('backend/sliders/create')?'active':'' }}"><a href="{{ route('backend.sliders.create') }}"><i class="fa fa-pencil-square-o"></i>create</a></li>
+                    <li class="{{ Request::is('backend/sliders')?'active':'' }}"><a href="{{ route('backend.sliders.index') }}"><i class="fa fa-th-list"></i>list</a></li>
+                </ul>
+            </li>
+
             {{-- projects  --}}
 
             <li class="treeview {{ Request::is('backend/projects*')?'active':'' }}">

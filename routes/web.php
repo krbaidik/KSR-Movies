@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\TeamController;
+use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\NoticeController;
 use App\Http\Controllers\Backend\CourseController;
 use App\Http\Controllers\Backend\CourseTypeController;
@@ -76,6 +77,9 @@ Route::group(['middleware'=>['auth']],
 
         // team route
         Route::resource('backend/teams', TeamController::class)->names('backend.teams');
+
+        // slider route
+        Route::resource('backend/sliders', SliderController::class)->names('backend.sliders');
 
         // course route
         Route::resource('backend/courses', CourseController::class)->names('backend.courses');

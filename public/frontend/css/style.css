@@ -1,5 +1,5 @@
 body {
-  background: #fff;
+  background: floralwhite;
   color: #444;
   font-family: "Open Sans", sans-serif;
 }
@@ -503,52 +503,50 @@ h1, h2, h3, h4, h5, h6 {
 # home Section
 --------------------------------------------------------------*/
 #home {
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
   height: 90vh;
   position: relative;
   padding: 0;
 }
 
-#home .home-content {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
+.carousel-item > img{
+  height: 90vh;
 }
 
-#home .home-content h2 {
-  color: #0c2e8a;
-  margin-bottom: 30px;
-  font-size: 64px;
-  font-weight: 700;
+.carousel_text{
+  color: white;
+  text-shadow: 2px 2px 8px darkred;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: orangered;
+  opacity: 0.8;
 }
 
-#home .home-content h2 span {
-  color: darkcyan;
-  text-decoration: underline;
-}
+@media (max-width: 992px) {
 
-@media (max-width: 767px) {
-  #home .home-content h2 {
-    display: none;
-  }
-
-#home, .home-slider {
-  height: 35vh;
+  #home {
+  width: 100%;
+  height: 100%;
   position: relative;
-  bottom: 0;
-  top: 0;
+  padding: 0;
 }
+  .carousel-item > img{
+  height: auto;
+}
+  .carousel_text{
+  color: black;
+  text-shadow: 2px 2px 8px darkred;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: orangered;
+  opacity: 0.8;
+}
+
+}
+
 #myVideo{
   top: 0;
-  bottom: 0;
 }
 .home-content .startbtn{
   margin-bottom: -120px;
@@ -588,30 +586,6 @@ h1, h2, h3, h4, h5, h6 {
   color: darkcyan;
 }
 
-#home .home-slider {
-  z-index: 8;
-  height: 90vh;
-}
-
-#home .home-slider::before {
-  content: '';
-  background-color: rgba(255, 255, 255, 0.2);
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: 7;
-}
-
-#home .home-slider .swiper-slide {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition-property: opacity;
-}
 
 /*--------------------------------------------------------------
 # Sections
