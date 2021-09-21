@@ -147,7 +147,7 @@
 
     <!-- ======= Team Section ======= -->
     <section id="team">
-      <div class="container" data-aos="zoom-in-up">
+      <div class="container" data-aos="zoom-in">
         <div class="section-header">
           <h2>Our Team</h2>
         </div>
@@ -160,10 +160,10 @@
                 <h4>{{ $team->name}}</h4>
                 <span>{{ $team->position}}</span>
                 <div class="social">
-                  <a href="{{ $team->twitter_url ?? ''}}"><i class="bi bi-twitter" title="twitter"></i></a>
-                  <a href="{{ $team->facebook_url ?? ''}}"><i class="bi bi-facebook" title="facebook"></i></a>
-                  <a href="{{ $team->instagram_url ?? ''}}"><i class="bi bi-instagram" title="instagram"></i></a>
-                  <a href="{{ $team->youtube_url ?? ''}}"><i class="bi bi-youtube" title="youtube"></i></a>
+                  <a href="{{ $team->twitter_url ?? '#'}}" target="_blank"><i class="bi bi-twitter" title="twitter"></i></a>
+                  <a href="{{ $team->facebook_url ?? '#'}}" target="_blank"><i class="bi bi-facebook" title="facebook"></i></a>
+                  <a href="{{ $team->instagram_url ?? '#'}}" target="_blank"><i class="bi bi-instagram" title="instagram"></i></a>
+                  <a href="{{ $team->youtube_url ?? '#'}}" target="_blank"><i class="bi bi-youtube" title="youtube"></i></a>
                 </div>
               </div>
             </div>

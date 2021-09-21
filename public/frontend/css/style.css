@@ -4,6 +4,36 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.fshare{
+  padding: 10px;
+  background-color: #1877f2;
+  color: white;
+}
+
+.tshare{
+  background-color: #1da1f2;
+  color: white;
+  padding: 10px;
+
+}
+
+.sharediv{
+  font-size: 34px;
+  color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 140px;
+}
+
+@media (max-width: 768px) {
+  .sharediv{
+  left: 0;
+  font-size: 18px;
+  position: fixed;
+}
+}
+
 .body{
   text-align: justify;
   line-height: 2rem;
@@ -135,7 +165,7 @@ div[class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between"]{
 
 @media (max-width: 768px) {
   .bi-telephone{
-    font-size: 28px;
+    font-size: 22px;
     margin-right: 65px;
   }
   .telephone{

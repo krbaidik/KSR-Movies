@@ -48,6 +48,9 @@
             <h3 class="text-primary d-inline">{{ $data['notice']->title}} </h3><span class=""> - posted on: {{ $data['notice']->created_at->format('d M, Y')}}</span>
             <hr>
             <div class="body">
+              <span class="sharediv">
+            <a href="https://www.facebook.com/share.php?u={{url()->current()}}&t={{$data['notice']->title}}" title="Share on Facebook" class="fshare" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.twitter.com/intent/tweet?text={{url()->current()}}" title="Share on Twitter" class="tshare" target="_blank"><i class="bi bi-twitter"></i></a></span>
               <p>{!! $data['notice']->description !!}</p>
             </div>
 
