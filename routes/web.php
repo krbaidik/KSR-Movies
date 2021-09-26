@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\TeamController;
+use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\NoticeController;
 use App\Http\Controllers\Backend\CourseController;
@@ -43,6 +44,8 @@ Route::get('/notice', [FrontendHomeController::class, 'notice'])->name('frontend
 Route::get('/notice/{slug}', [FrontendHomeController::class, 'noticeDetail'])->name('frontend.noticedetail');   
 
 Route::get('/youtube-videos', [FrontendHomeController::class, 'youtubeVideo']);
+Route::get('/images/album', [FrontendHomeController::class, 'album'])->name('frontend.album');
+Route::get('/images/album/{id}', [FrontendHomeController::class, 'gallery'])->name('frontend.gallery');
 
 Route::post('/msgsubmit', [FrontendHomeController::class, 'msgSubmit']);
 
@@ -77,6 +80,10 @@ Route::group(['middleware'=>['auth']],
 
         // team route
         Route::resource('backend/teams', TeamController::class)->names('backend.teams');
+
+        // album route
+        Route::resource('backend/albums', GalleryController::class)->names('backend.albums');
+        Route::post('/delgallery', [GalleryController::class,'delGalleryImg'])->name('gallery.del');
 
         // slider route
         Route::resource('backend/sliders', SliderController::class)->names('backend.sliders');

@@ -12,6 +12,8 @@ use App\Models\CourseType;
 use App\Models\Project;
 use App\Models\Notice;
 use App\Models\Video;
+use App\Models\Album;
+use App\Models\Gallery;
 use App\Models\Slider;
 
 class FrontendHomeController extends Controller
@@ -38,9 +40,9 @@ class FrontendHomeController extends Controller
         ]);
 
         if($msg){
-            return redirect('/') -> with('success','Message sent !');
+            return redirect('/#feedback') -> with('success','Message sent ! Thank you for your feedback.');
         }else{
-            return redirect('/') -> with('success','Message not sent !');
+            return redirect('/#feedback') -> with('success','Message not sent !');
         }
     }
 
@@ -111,5 +113,18 @@ class FrontendHomeController extends Controller
         $data = [];
         $data['video'] = Video::where([['status','1']])->latest()->paginate(10);
         return view('frontend.video.video',compact('data'));
+    }
+
+    public function album(){
+        $data = [];
+        $data['album'] = Album::where([['status','1']])->latest()->paginate(10);
+        return view('frontend.album.album',compact('data'));
+    }
+
+    public function gallery($id){
+        $data = [];
+        $data['album_name'] = Album::find($id)->title;
+        $data['gallery'] = Gallery::where([['status','1'],['album_id',$id]])->get();
+        return view('frontend.album.gallery',compact('data'));
     }
 }

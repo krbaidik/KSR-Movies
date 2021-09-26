@@ -227,6 +227,8 @@
 <script src="{{ asset('assets/backend/dist/js/app.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('assets/backend/dist/js/demo.js') }}"></script>
+<!-- image uploader -->
+<script type="text/javascript" src="https://www.codehim.com/demo/jquery-image-uploader-preview-and-delete/dist/image-uploader.min.js"></script>
 
 
 

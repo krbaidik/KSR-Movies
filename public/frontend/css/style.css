@@ -4,10 +4,18 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.error{
+  color: red;
+}
+
 .fshare{
   padding: 10px;
   background-color: #1877f2;
   color: white;
+}
+
+.item:hover{
+  filter: brightness(80%);
 }
 
 .tshare{
@@ -23,14 +31,18 @@ body {
   position: absolute;
   display: flex;
   flex-direction: column;
-  left: 140px;
+  left: 0px;
 }
 
 @media (max-width: 768px) {
   .sharediv{
   left: 0;
+  top: 320px;
   font-size: 18px;
   position: fixed;
+}
+.sh{
+  font-size: 14px !important;
 }
 }
 

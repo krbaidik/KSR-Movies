@@ -219,17 +219,22 @@
 
       <div class="container">
         <div class="section-header">
-          <h2>Give Feedback</h2>
+          <h2 id="feedback">Give Feedback</h2>
         </div>
         <div class="form">
-          <form action="/msgsubmit" method="post">
+          <div class="error-msg">
+            @if(Session::has('success'))
+            <p class="alert alert-success">{{ Session::get('success')}}</p>
+            @endif
+          </div>
+          <form action="/msgsubmit" method="post" id="feedbackform">
             @csrf
             <div class="row">
               <div class="form-group col-md-6">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
               </div>
               <div class="form-group col-md-6 mt-3 mt-md-0">
-                <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone Number" required>
+                <input type="number" class="form-control" name="phone" id="phone" placeholder="Your Phone Number" required>
               </div>
             </div>
             <div class="row">
@@ -241,7 +246,7 @@
               </div>
             </div>
             <div class="form-group mt-3 mb-3">
-              <textarea class="form-control" name="description" rows="5" placeholder="Message" required></textarea>
+              <textarea class="form-control" name="description" rows="5" placeholder="Message" required id="message"></textarea>
             </div>
             <div class="text-center"><button type="submit">Send Message</button></div>
           </form>

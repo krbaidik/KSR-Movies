@@ -18,6 +18,8 @@
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{ asset('assets/backend/dist/css/skins/_all-skins.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/backend/font-awesome/css/font-awesome.min.css') }}">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet" href="https://www.codehim.com/demo/jquery-image-uploader-preview-and-delete/dist/image-uploader.min.css">
     <link rel="stylesheet" href="{{ asset('assets/backend/css/mystyle.css') }}">
     @if($profile)
     <link rel="shortcut icon" href="{{ asset('images/company_profile/'.$profile->fav_icon ?? '') }}"/>

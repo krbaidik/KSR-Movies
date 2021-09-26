@@ -1,3 +1,16 @@
+.del_btn{
+    font-size: 27px;
+    padding: 0px 5px;
+    border-radius: 10px;
+    background-color: lightgoldenrodyellow;
+    color: red;
+    position: relative;
+    top: 40px;
+    cursor: pointer;
+    float: right;
+
+}
+
 .content-header h1 a{
     width: 10%;
     display: block;

@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.9/css/boxicons.min.css">
   <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
   <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
   <link href="/frontend/css/style.css" rel="stylesheet">
 
 </head>
@@ -74,8 +75,8 @@
             </ul>
           </li>
           <li><a class="nav-link @yield('noticeactive')" href="/notice">Notice</a></li>
-          <li><a class="nav-link" href="/#contact">Contact</a></li>
           <li><a class="nav-link @yield('videoactive')" href="/youtube-videos"><span class="bg-danger text-white p-2"><i class="bi bi-youtube yt"></i> Videos</span></a></li>
+          <li><a class=" @yield('albumactive') nav-link" href="/images/album"><i class="bi bi-images" style="font-size: 22px; margin-right: 5px; color: lightblue;"></i> Album</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

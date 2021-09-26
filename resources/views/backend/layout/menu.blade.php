@@ -55,6 +55,21 @@
                 </ul>
             </li>
 
+            {{-- albums  --}}
+
+            <li class="treeview {{ Request::is('backend/albums*')?'active':'' }}">
+                <a href="{{ route('backend.albums.index') }}">
+                    <i class="fa fa-image"></i> <span>Album</span>
+                    <span class="pull-right-container">
+             <i class="fa fa-angle-left pull-right"></i>
+           </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ Request::is('backend/albums/create')?'active':'' }}"><a href="{{ route('backend.albums.create') }}"><i class="fa fa-pencil-square-o"></i>create</a></li>
+                    <li class="{{ Request::is('backend/albums')?'active':'' }}"><a href="{{ route('backend.albums.index') }}"><i class="fa fa-th-list"></i>list</a></li>
+                </ul>
+            </li>
+
             {{-- projects  --}}
 
             <li class="treeview {{ Request::is('backend/projects*')?'active':'' }}">

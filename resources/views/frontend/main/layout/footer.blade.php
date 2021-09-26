@@ -25,8 +25,62 @@
   <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.0.0-alpha.37/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
   <script type="text/javascript">  
+
+    // feedback form validation
+    $("#feedbackform").validate({
+      rules: {
+        name: "required",
+        email: {
+          required: true,
+          email: true
+        },
+        phone: "required",
+        subject: "required",
+        description: "required"
+      },
+
+      messages: {
+        name: "Please enter your name",
+        phone: "Please enter your phone number",
+        email: "Please enter a valid email address",
+        subject: "Please specify your subject",
+        description: "Please write your feedback"
+      }
+    });
+    
+//     $('.msgsend').on('click', function(event){
+//   event.preventDefault();
+//         var url = "/msgsubmit";
+//         var name = $('#name').val();
+//         var phone = $('#phone').val();
+//         var email = $('#email').val();
+//         var subject = $('#subject').val();
+//         var message = $('#message').val();
+
+//             $.ajax({
+//                 type : "POST",
+//                 url : url,
+//                 data : {
+//                     "_token" : "{{ csrf_token()}}",
+//                     "name" : name,
+//                     "phone" : phone,
+//                     "email": email,
+//                     "subject": subject,
+//                     "message" : message,
+//                 },
+//                 dataType : "json",
+
+//                 success: function(){
+                    
+//                 }
+//             })
+// })
+
 
 // clock 
         function startTime() {
@@ -37,6 +91,7 @@
           m = checkTime(m);
           s = checkTime(s);
           h = checkTime(h);
+          am_pm = 'am';
           if (h > 12) {
             h -= 12;
             am_pm = "pm";
@@ -47,7 +102,8 @@
           }
           document.getElementById('time').innerHTML =  h + ":" + m + ":" + s+ " "+ am_pm;
         }
-          setInterval(startTime, 1000);
+        
+        setInterval(startTime, 1000);
 
         function checkTime(i) {
           if (i < 10) {i = "0" + i};
@@ -238,7 +294,7 @@
   });
 
 })()
-    
+
   </script>
 
   <script>

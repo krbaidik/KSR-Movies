@@ -44,16 +44,21 @@
     <section class="inner-page pt-4">
       <div class="container">
         <div class="row gy-4">
-          <div class="col-md-10 col-lg-10 col-sm-11 offset-md-1">
+          <div class="col-md-8 col-lg-8 col-sm-8">
             <h3 class="text-primary d-inline">{{ $data['notice']->title}} </h3><span class=""> - posted on: {{ $data['notice']->created_at->format('d M, Y')}}</span>
             <hr>
             <div class="body">
               <span class="sharediv">
+                <span class="text-white bg-danger text-center sh" style="font-size: 17px;">Share</span>
             <a href="https://www.facebook.com/share.php?u={{url()->current()}}&t={{$data['notice']->title}}" title="Share on Facebook" class="fshare" target="_blank"><i class="bi bi-facebook"></i></a>
             <a href="https://www.twitter.com/intent/tweet?text={{url()->current()}}" title="Share on Twitter" class="tshare" target="_blank"><i class="bi bi-twitter"></i></a></span>
               <p>{!! $data['notice']->description !!}</p>
             </div>
 
+          </div>
+          <div class="col-md-4 col-lg-4 col-sm-4">
+            <h4 class="text-primary">Follow us on Facebook</h4><hr>
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/KSR-Movies-pvt-Ltd-108681024874234/&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
         </div>
       </div>

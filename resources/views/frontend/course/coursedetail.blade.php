@@ -31,9 +31,9 @@
         <div class="d-flex justify-content-between align-items-center">
           <h2><b>{{$data['course']->course_type->title}}</b></h2>
           <ol>
-            <li><a href="{{ route('index') }}" class="text-primary">Home</a></li>
-            <li><a href="{{ route('frontend.course') }}" class="text-primary">Course</a></li>
-            <li class="text-primary">{{ $data['course']->title}}</li>
+            <li><a href="{{ route('index') }}" class="text-white">Home</a></li>
+            <li><a href="{{ route('frontend.course') }}" class="text-white">Course</a></li>
+            <li>{{ $data['course']->title}}</li>
           </ol>
         </div>
 
@@ -43,7 +43,7 @@
     <section class="inner-page pt-4">
       <div class="container">
         <div class="row gy-4">
-          <div class="col-md-10 col-lg-10 col-sm-11 offset-md-1">
+          <div class="col-md-8 col-lg-8 col-sm-8">
             <h3 class="text-primary">{{ $data['course']->title}} </h3>
             <hr>
             <div class="body">
@@ -51,6 +51,10 @@
               <p>{!! $data['course']->description !!}</p>
             </div>
 
+          </div>
+          <div class="col-md-4 col-lg-4 col-sm-4">
+            <h4 class="text-primary">Follow us on Facebook</h4><hr>
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/KSR-Movies-pvt-Ltd-108681024874234/&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
         </div>
       </div>
