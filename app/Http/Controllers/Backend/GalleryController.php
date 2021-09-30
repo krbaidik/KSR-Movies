@@ -182,7 +182,6 @@ class GalleryController extends Controller
 
     public function delGalleryImg(Request $req){
         $img = Gallery::find($req->id);
-
             if(file_exists(public_path().'/images/galleries/'.$img->image)){
                 
            unlink(public_path().'/images/galleries/'.$img->image);

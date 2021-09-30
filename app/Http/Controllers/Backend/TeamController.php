@@ -138,7 +138,14 @@ class TeamController extends Controller
      */
     public function destroy($id)
     {
-        Team::find($id)->delete();
+        $team = Team::find($id);
+
+        if(file_exists(public_path().'/images/teams/'.$team->image)){
+                
+           unlink(public_path().'/images/teams/'.$team->image);
+        }
+
+        $team->delete();
         return redirect()->route($this->base_route.'.index')->with('message','team deleted successfully');
     }
 }

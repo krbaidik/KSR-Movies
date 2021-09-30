@@ -160,7 +160,14 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        Service::find($id)->delete();
+        $service = Service::find($id);
+
+        if(file_exists(public_path().'/images/services/'.$service->image)){
+                
+           unlink(public_path().'/images/services/'.$service->image);
+        }
+
+        $service->delete();
         return redirect()->route($this->base_route.'.index')->with('message','Service deleted successfully');
     }
 }

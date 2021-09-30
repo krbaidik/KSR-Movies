@@ -162,7 +162,14 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        Project::find($id)->delete();
+        $project = Project::find($id);
+
+        if(file_exists(public_path().'/images/projects/'.$project->image)){
+                
+           unlink(public_path().'/images/projects/'.$project->image);
+        }
+
+        $project->delete();
         return redirect()->route($this->base_route.'.index')->with('message','Project deleted successfully');
     }
 }
