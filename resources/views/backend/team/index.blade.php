@@ -59,7 +59,7 @@
                                         <td>{{ $i+1 }}</td>
                                         <td>{{ $row->name }}</td>
                                         <td>{{ $row->position }}</td>
-                                        <td><img src="{{ asset('images/teams/'.$row->image) }}" alt="{{ $row->image }}" width="200" class="img img-thumbnail"></td>
+                                        <td><img src="{{ asset('images/teams/'.$row->image) }}" alt="{{ $row->image }}" width="150" height="100"></td>
                                         <td>{{ $row->facebook_url }}</td>
                                         <td>{{ $row->created_at }}</td>
                                         <td>

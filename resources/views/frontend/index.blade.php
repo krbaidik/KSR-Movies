@@ -93,19 +93,19 @@
     <section id="services">
       <div class="container" data-aos="fade-right">
         <div class="section-header">
-          <h2>Services <span class="btn btn-info"><a href="/services" class="all">All</a></span></h2>
+          <h2 class="text-center text-white">Services</h2>
         </div>
 
-        <div class="row gy-4">
+        <div class="row gy-4 mb-3">
           @forelse($data['services'] as $index=>$service)
           @php
             $delay = 100;
           @endphp
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="{{ $delay }}">
+          <div class="col-lg-6 service_div" data-aos="fade-right" data-aos-delay="{{ $delay }}">
             <div class="box">
-              <div class="icon"><img src="{{ asset('images/services/'.$service->image) }}" alt="{{$service->image}}" width="200" class="img img-thumbnail m-2"></div>
-              <h4 class="title"><a href="">{{ $service->title}}</a></h4>
-              <p class="description">{!! substr($service->description, 0,80) !!} <a href="{{ route('frontend.servicedetail',$service->slug) }}" class="text-primary">Read more</a></p>
+              <div class="icon"><img src="{{ asset('images/services/'.$service->image) }}" alt="{{$service->image}}" width="200" height="150" class=" m-2"></div>
+              <h4 class="title"><a href="{{ route('frontend.servicedetail',$service->slug) }}" class="text-white">{{ $service->title}}</a></h4>
+              <p class="description">{!! substr($service->description, 0,80) !!} <a href="{{ route('frontend.servicedetail',$service->slug) }}" class="text-warning">...Read more</a></p>
             </div>
           </div>
           @php
@@ -115,7 +115,7 @@
           <h2 class="text-danger">No service found!</h2>
           @endforelse
         </div>
-
+        <div class="text-center"><a href="/services" class="text-white servicebtn">View All Services</a></div>
       </div>
     </section><!-- End Services Section -->
 
@@ -123,17 +123,17 @@
     <section id="projects" class="portfolio">
       <div class="container" data-aos="fade-left">
         <div class="section-header">
-          <h2>Projects <span class="btn btn-info m-2"><a href="/projects" class="all">All</a></span><span class="btn btn-danger m-2"><a href="/upcoming-projects" class="all">Upcoming</a></span></h2>
+          <h2>Projects <span class="btn m-2"><a href="/projects" class="all">All</a></span><span class="btn m-2"><a href="/upcoming-projects" class="all">Upcoming</a></span></h2>
         </div>
 
         <div class="row portfolio-container" data-aos="fade-left" data-aos-delay="200">
           @forelse($data['projects'] as $index=>$project)
 
           <div class="col-lg-4 col-md-6 portfolio-item">
-            <img src="{{ asset('images/projects/'.$project->image)}}" class="img-fluid" alt="{{ $project->image}}">
+            <img src="{{ asset('images/projects/'.$project->image)}}" class="img-fluid" alt="{{ $project->image}}" width="100%" style="height: 250px;">
             <div class="portfolio-info">
               <h4>{{ $project->title}}</h4>
-                  <a href="{{ route('frontend.projectdetail',$project->slug) }}" class="btn btn-warning" title="View detail"><i class="bi bi-eye"></i> View</a>
+                  <a href="{{ route('frontend.projectdetail',$project->slug) }}" class="btn" title="View detail"><i class="bi bi-eye"></i> View</a>
             </div>
           </div>
           @empty
@@ -143,7 +143,36 @@
         </div>
 
       </div><br>
-    </section><!-- End Portfolio Section -->
+    </section><!-- End Projects Section -->
+
+
+
+    <!--Courses section-->
+<section class="course_main_div">
+  <div class="container">
+    <div class="row">
+            <h2 style="text-transform: uppercase; font-weight: bold;">Available Courses</h2>
+            @forelse($data['courses'] as $course)
+            <div class="col-md-3 col-lg-2 col-sm-4">
+              <a href="{{route('frontend.coursedetail',$course->slug)}}">
+            <div class="course_sub_div">
+              <span class="imagecourse">
+                <img src="{{ asset('images/courses/'.$course->image)}}" alt="{{ $course->title}}" height="70" width="80" style="margin-bottom: 8px;">
+                <span class="text-center text-white">{{ $course->title}}</span>
+              </span>
+            </div>
+            </a>
+            </div>
+            @empty
+            <span>No course Available.</span>
+            @endforelse
+    </div>
+        <p class="coursebtn btn"><a href="/courses" class="text-white">View All Courses</a></p>
+</div>   
+</section>
+
+ <!--End course section-->
+
 
     <!-- ======= Team Section ======= -->
     <section id="team">

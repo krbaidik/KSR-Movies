@@ -33,8 +33,8 @@
           <h2><b>"{{ $data['album_name']}}" Gallery</b></h2>
           <ol>
             <li><a href="{{ route('index') }}" class="text-white">Home</a></li>
-            <li><a href="{{ route('frontend.album') }}" class="text-white">{{ $data['album_name']}}</a></li>
-            <li>Gallery</li>
+            <li><a href="{{ route('frontend.album') }}" class="text-white">Album</a></li>
+            <li>{{ $data['album_name']}}</li>
           </ol>
         </div>
 
@@ -46,7 +46,7 @@
         <div class="row gy-4">
           @forelse($data['gallery'] as $index=>$gallery)
           <div class="col-md-4 col-lg-4 col-sm-12 item">
-            <a href="{{ asset('images/galleries/'.$gallery->image)}}" class="fancybox" data-fancybox="gallery"><img src="{{ asset('images/galleries/'.$gallery->image)}}" title="{{ $gallery->image}}" width="100%"></a>
+            <a href="{{ asset('images/galleries/'.$gallery->image)}}" class="fancybox" data-fancybox="gallery"><img src="{{ asset('images/galleries/'.$gallery->image)}}" title="{{ $gallery->image}}" width="100%" height="220"></a>
           </div>
           @empty
           <h2 class="text-danger">No gallerys found!</h2>

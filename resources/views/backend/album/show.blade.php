@@ -5,6 +5,12 @@
 @endsection
 
 @section('title2')
+<style type="text/css">
+    .del_btn{
+        top: 30px;
+        right: -20px;
+    }
+</style>
     <section class="content-header">
         <h1>
             <a href="{{ route('backend.albums.index') }}" class="btn btn-primary btn-block margin-bottom"><i class="fa fa-list"></i>List</a>
@@ -34,7 +40,7 @@
                             </tr>
                             <tr>
                                 <th><h3>Album Cover</h3></th>
-                                <td><img src="{{ asset('images/albums/'.$album->cover_image)}}" title="{{ $album->cover_image}}" class="img img-thumbnail" width="200"></td>
+                                <td><img src="{{ asset('images/albums/'.$album->cover_image)}}" title="{{ $album->cover_image}}" width="210" height="150"></td>
                             </tr>
 
                             <tr>
@@ -43,7 +49,7 @@
                                     @forelse($album->galleries as $gallery)
                                     <div class="col-md-3 imagediv">
                                         <span class="del_btn delImg" title="Delete Image" id="{{ $gallery->id}}"><i class="fa fa-trash" ></i></span>
-                                        <a href="{{ asset('images/galleries/'.$gallery->image)}}" target="_blank"><img src="{{ asset('images/galleries/'.$gallery->image)}}" alt="{{ $gallery->image}}" class="img img-thumbnail"></a>
+                                        <a href="{{ asset('images/galleries/'.$gallery->image)}}" target="_blank"><img src="{{ asset('images/galleries/'.$gallery->image)}}" alt="{{ $gallery->image}}" width="210" height="150" style="padding: 10px;"></a>
                                     </div>
                                     @empty
                                     <h4 class="text-danger">Album Gallery Not Found.</h4>

@@ -45,7 +45,7 @@
         <div class="row gy-4">
           @forelse($data['album'] as $index=>$album)
           <div class="col-md-4 col-lg-4 col-sm-6 item">
-            <a href="{{ route('frontend.gallery',$album->id)}}"><img src="{{ asset('images/albums/'.$album->cover_image)}}" title="{{ $album->cover_image}}" width="100%"></a>
+            <a href="{{ route('frontend.gallery',$album->id)}}"><img src="{{ asset('images/albums/'.$album->cover_image)}}" title="{{ $album->cover_image}}" width="100%" height="250"></a>
             <h5 class="pt-2 text-danger"><b><i>- {{ $album->title }}</i></b><span class="text-muted text-sm text-gray-500"> - {{ \Carbon\Carbon::parse($album->created_at)->format('d / m / Y')}}
             </span></h5>
             <hr>

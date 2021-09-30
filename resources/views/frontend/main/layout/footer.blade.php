@@ -10,7 +10,7 @@
         <div class="copyright">
         
         Copyright <strong>&copy; {{ $profile->name?? 'KSR'}}</strong>. All Rights Reserved. {{ date('Y')}} <br>
-        Developed by <a href="https://www.facebook.com/krbaidik" target="_blank" class="text-success" title="Khubi Ram Baidik">Krbaidik</a>
+        Site by : <a href="https://www.facebook.com/krbaidik" target="_blank" class="text-info" title="Khubi Ram Baidik">Krbaidik</a>
       </div>
         
       </div>
@@ -288,7 +288,7 @@
     AOS.init({
       duration: 500,
       easing: 'ease-in-out',
-      once: false,
+      once: true,
       mirror: false
     })
   });

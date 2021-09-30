@@ -39,8 +39,8 @@
         <a href="{{$profile->facebook_url ?? ''}}" class="facebook" target="_blank" title="facebook"><i class="bi bi-facebook"></i></a>
         <a href="{{$profile->instagram_url ?? ''}}" class="instagram" target="_blank" title="instagram"><i class="bi bi-instagram"></i></a>
         <a href="{{$profile->youtube_url}}" class="youtube" target="_blank" title="youtube"><i class="bi bi-youtube"></i></a>
-        <a href="{{ route('login')}}"><span class="btn btn-primary pt-0 pb-0" title="login"><i class="loginicon bi bi-box-arrow-in-right"></i>Login</span></a>
-        <a class="text-white clock"><i class="bi bi-clock"></i><span class="btn pt-0 pb-0 text-white" title="Time" id="time"> </span></a>
+        <a href="{{ route('login')}}"><span class="btn pt-0 pb-0" title="login"><i class="loginicon bi bi-box-arrow-in-right"></i>Login</span></a>
+        <a class="text-white clock"><i class="bi bi-clock mr-2"></i><span class="pt-0 pb-0 text-white" title="Time" id="time"> </span></a>
       </div>
       @endif
     </div>

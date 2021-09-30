@@ -56,7 +56,7 @@
                                     <tr>
                                         <td>{{ $i+1 }}</td>
                                         <td>{{ $row->title }}</td>
-                                        <td><img src="{{ asset('images/albums/'.$row->cover_image) }}" alt="{{ $row->cover_image }}" width="200" class="img img-fluid" height="150"></td>
+                                        <td><img src="{{ asset('images/albums/'.$row->cover_image) }}" alt="{{ $row->cover_image }}" width="150" height="100" height="150"></td>
                                         <td>{{ $row->created_at }}</td>
                                         <td>
                                             @if($row->status == 1)

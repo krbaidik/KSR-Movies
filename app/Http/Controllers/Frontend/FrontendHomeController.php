@@ -26,6 +26,7 @@ class FrontendHomeController extends Controller
         $data['services'] = Service::where([['status','1']])->latest()->take(4)->get();
         $data['projects'] = Project::where([['status','1']])->latest()->take(6)->get();
         $data['sliders'] = Slider::where([['status','1']])->latest()->take(6)->get();
+        $data['courses'] = Course::where([['status','1']])->latest()->take(6)->get();
         return view('frontend.index',compact('data'));
     }
 

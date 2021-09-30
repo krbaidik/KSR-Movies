@@ -20,7 +20,7 @@
             @foreach($data['row']->galleries as $gallery)
                 <div class="col-md-3 imagediv">
                     <span class="del_btn delImg" title="Delete Image" id="{{ $gallery->id}}"><i class="fa fa-trash" ></i></span>
-                    <a href="{{ asset('images/galleries/'.$gallery->image)}}" target="_blank"><img src="{{ asset('images/galleries/'.$gallery->image)}}" alt="{{ $gallery->image}}" class="img img-thumbnail"></a>
+                    <a href="{{ asset('images/galleries/'.$gallery->image)}}" target="_blank"><img src="{{ asset('images/galleries/'.$gallery->image)}}" alt="{{ $gallery->image}}" width="210" height="150" style="margin-bottom: 10px;"></a>
                 </div>
             @endforeach
             @endif

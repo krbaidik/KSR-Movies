@@ -1,8 +1,73 @@
+
+:root {
+  --main_color: #122d48;
+  --sub_main_color: #059d0a;
+}
+
 body {
-  background: floralwhite;
+  background: white;
   color: #444;
   font-family: "Open Sans", sans-serif;
 }
+
+img{
+  object-fit: cover;
+}
+
+.course_main_div{
+  background: var(--main_color);
+    padding: 80px 0px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 80px;
+}
+
+.course_sub_div{
+  border: 2px solid white;
+  height: 210px;
+  color: white;
+  padding: 35px 0px;
+  background-color: #165876;
+  box-shadow: 5px 5px #888888;
+  transition: 0.5s;
+  margin: 30px 0px;
+}
+
+.imagecourse{
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.course_sub_div:hover{
+  margin-top: -2px;
+}
+
+.coursebtn{
+  background-color: teal;
+  display: inline-block;
+  text-transform: uppercase;
+  transition: 0.6s;
+  border-radius: unset;
+  font-weight: bold;
+  padding: 10px;
+}
+.servicebtn{
+  background: teal;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.coursebtn:hover{
+  background-color: #5d7420;
+}
+.servicebtn:hover{
+  background-color: #5d7420;
+}
+
 
 .error{
   color: red;
@@ -69,7 +134,7 @@ text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 
 }
 
 .active{
-  color: #0a0d6b !important;
+  color: #2bed !important;
 }
 
 .footr{
@@ -118,9 +183,7 @@ text-shadow: 0 1px 0 #CCCCCC, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 
   font-size: 16px !important;
 }
 .all{
-  color: white !important;
-  text-transform: capitalize;
-  font-family: cursive, serif;
+  color: white;
 }
 
 span[class="relative z-0 inline-flex shadow-sm rounded-md"]{
@@ -153,6 +216,16 @@ div[class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between"]{
     font-weight: bolder;
   }
 
+  .btn{
+    border-radius: unset !important;
+    background-color: teal;
+    color: white;
+  }
+  .btn:hover{
+    color: white;
+    background: #5d7420;
+  }
+
   .telephone{
     position: fixed;
     z-index: 1000;
@@ -163,11 +236,11 @@ div[class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between"]{
     border-bottom-left-radius: 30px;
     color: white;
     font-weight: bolder;
-    background-color: #d61212;
+    background-color: var(--sub_main_color);
+    transition: 0.8s;
   }
   .telephone:hover{
     right: 0px;
-    transition: 1s;
   }
   .bi-telephone{
     margin-right: 40px;
@@ -187,7 +260,7 @@ div[class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between"]{
 }
 
 a {
-  color: darkcyan;
+  color: var(--main_color);
   text-decoration: none;
   transition: 0.5s;
 }
@@ -220,7 +293,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: darkcyan;
+  background: var(--sub_main_color);
   width: 40px;
   height: 40px;
   transition: all 0.4s;
@@ -246,7 +319,7 @@ h1, h2, h3, h4, h5, h6 {
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
-  background: #d61212;
+  background: var(--sub_main_color);
   border-bottom: 1px solid #eee;
   font-size: 14px;
   padding: 0;
@@ -269,7 +342,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #topbar .contact-info i a:hover {
-  color: darkcyan;
+  color: var(--main_color);
 }
 
 #topbar .social-links a {
@@ -281,7 +354,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #topbar .social-links a:hover {
-  color: darkcyan;
+  color: var(--main_color);
 }
 
 #topbar .social-links a:first-child {
@@ -295,8 +368,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 100px;
   transition: all 0.5s;
   z-index: 997;
-  background: darkcyan;
-  border-bottom: 3px solid #d61212;
+  background: var(--main_color);
+  border-bottom: 2px solid var(--sub_main_color);
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -316,7 +389,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header #logo h1 a span {
-  color: darkcyan;
+  color: var(--main_color);
 }
 
 #header #logo img {
@@ -389,7 +462,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 99;
   opacity: 0;
   visibility: hidden;
-  background: darkcyan;
+  background: var(--main_color);
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
 }
@@ -502,7 +575,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-  color: darkcyan;
+  color: var(--main_color);
 }
 
 .navbar-mobile .getstarted {
@@ -534,7 +607,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
-  color: darkcyan;
+  color: var(--main_color);
 }
 
 .navbar-mobile .dropdown > .dropdown-active {
@@ -619,13 +692,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #home .home-content .btn-projects {
-  background: darkcyan;
-  border: 2px solid darkcyan;
+  background: var(--main_color);
+  border: 2px solid var(--main_color);
 }
 
 #home .home-content .btn-projects:hover {
   background: none;
-  color: darkcyan;
+  color: var(--main_color);
 }
 
 
@@ -658,7 +731,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: darkcyan;
+  background: var(--main_color);
   bottom: 0;
   left: 0;
 }
@@ -772,7 +845,7 @@ section {
 #about .content i {
   font-size: 20px;
   padding-right: 4px;
-  color: darkcyan;
+  color: var(--main_color);
 }
 
 #about .content ul {
@@ -788,12 +861,18 @@ section {
 --------------------------------*/
 #services {
   padding: 40px 0;
+  background: var(--main_color);
+  color: white;
+}
+
+.service_div{
+  margin: 15px 0px;
 }
 
 #services .box {
   padding: 40px;
   box-shadow: 10px 10px 15px rgba(73, 78, 92, 0.1);
-  background: #fff;
+  background: #165876;
   transition: 0.4s;
   height: 100%;
 }
@@ -819,7 +898,7 @@ section {
 
 #services .box .icon i:before {
   background: #0c2e8a;
-  background: linear-gradient(45deg, darkcyan 0%, #a3ebd5 100%);
+  background: linear-gradient(45deg, var(--main_color) 0%, #a3ebd5 100%);
   -webkit-background-clip: text;
   background-clip: border-box;
   -webkit-text-fill-color: transparent;
@@ -885,11 +964,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid darkcyan;
+  border: 1px solid var(--main_color);
 }
 
 #clients .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: darkcyan;
+  background-color: var(--main_color);
 }
 
 /* Our Portfolio Section
@@ -939,11 +1018,11 @@ section {
 }
 
 #projects .portfolio-item .portfolio-info {
-  opacity: 0;
+  opacity: 1;
   position: relative;
-  top: -60px;
+  top: -10px;
   z-index: 3;
-  background: darkcyan;
+  background: var(--main_color);
   padding: 15px 20px;
   transition: all 0.3s ease-in-out;
 }
@@ -952,22 +1031,13 @@ section {
   position: relative;
   font-size: 18px;
   color: #fff;
-  font-weight: 600;
+  font-weight: 550;
 }
 
 .bi-eye{
   font-size: 25px;
   padding: 0px;
   margin: 0px;
-}
-
-#projects .portfolio-item:hover img {
-  top: -10px;
-}
-
-#projects .portfolio-item:hover .portfolio-info {
-  opacity: 1;
-  bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -991,11 +1061,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid darkcyan;
+  border: 1px solid var(--main_color);
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: darkcyan;
+  background-color: var(--main_color);
 }
 
 .portfolio-details .portfolio-info {
@@ -1087,11 +1157,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid darkcyan;
+  border: 1px solid var(--main_color);
 }
 
 #testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: darkcyan;
+  background-color: var(--main_color);
 }
 
 /* Call To Action Section
@@ -1135,8 +1205,8 @@ section {
 }
 
 #call-to-action .cta-btn:hover {
-  background: darkcyan;
-  border: 3px solid darkcyan;
+  background: var(--main_color);
+  border: 3px solid var(--main_color);
 }
 
 /* Our Team Section
@@ -1161,7 +1231,7 @@ section {
 }
 
 #team .member .details {
-  background: darkcyan;
+  background: var(--main_color);
   color: #fff;
   padding: 15px;
   border-radius: 0 0 3px 3px;
@@ -1207,7 +1277,7 @@ section {
   font-size: 48px;
   display: inline-block;
   margin-bottom: 10px;
-  color: darkcyan;
+  color: var(--main_color);
 }
 
 #contact .contact-info address, #contact .contact-info p {
@@ -1228,7 +1298,7 @@ section {
 }
 
 #contact .contact-info a:hover {
-  color: darkcyan;
+  color: var(--main_color);
 }
 
 #contact .contact-address, #contact .contact-phone, #contact .contact-email {
@@ -1260,9 +1330,8 @@ section {
 }
 
 #contact button[type="submit"] {
-  background: darkcyan;
+  background: var(--main_color);
   border: 0;
-  border-radius: 3px;
   padding: 10px 30px;
   color: #fff;
   transition: 0.4s;
@@ -1270,24 +1339,23 @@ section {
 }
 
 #contact button[type="submit"]:hover {
-  background: #2dc899;
+  background: #5d7420;
+}
+
+.form-control{
+  border-radius: unset;
 }
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 #footer {
- background:
-radial-gradient(black 15%, transparent 16%) 0 0,
-radial-gradient(black 15%, transparent 16%) 8px 8px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-background-color:#282828;
+background-color:var(--main_color);
 background-size:16px 16px;
   padding: 20px;
   color: white;
   font-size: 14px;
-  border-top: 3px solid red;
+  border-top: 2px solid var(--sub_main_color);
 }
 
 #footer .copyright {

@@ -52,7 +52,7 @@
           <div class= "col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ $delay }}">
             <div class="card">
           <a href="{{route('frontend.coursedetail',$course->slug)}}">
-            <img class="card-img-top" src="{{ asset('images/courses/'.$course->image) }}" alt="{{ $course->title}}"></a>
+            <img class="card-img-top" src="{{ asset('images/courses/'.$course->image) }}" alt="{{ $course->title}}" width="100%" height="250"></a>
         <div class="card-body">
           <h5 class="card-title"><a href="{{route('frontend.coursedetail',$course->slug)}}">{{ $course->title}}</a></h5>
           <p class="card-text short_des">{!! $course->short_description !!}</p>

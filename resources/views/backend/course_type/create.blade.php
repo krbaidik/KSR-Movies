@@ -57,3 +57,9 @@
 
 @endsection
 
+@section('jsforpage')
+
+@include('backend/include/slug')
+
+@endsection
+

@@ -50,7 +50,7 @@
           <div class= "col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ $delay }}">
             <div class="card">
           <a href="{{route('frontend.servicedetail',$service->slug)}}">
-            <img class="card-img-top" src="{{ asset('images/services/'.$service->image) }}" alt="{{ $service->title}}"></a>
+            <img class="card-img-top" src="{{ asset('images/services/'.$service->image) }}" alt="{{ $service->title}}" width="100%" height="250"></a>
         <div class="card-body">
           <h5 class="card-title"><a href="{{route('frontend.servicedetail',$service->slug)}}">{{ $service->title}}</a></h5>
           <p class="card-text">{!! substr($service->description, 0,65)!!} [...]</p>

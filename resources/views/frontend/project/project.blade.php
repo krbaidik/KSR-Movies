@@ -51,7 +51,7 @@
           <div class= "col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ $delay }}">
             <div class="card" >
           <a href="{{route('frontend.projectdetail',$project->slug)}}">
-            <img class="card-img-top" src="{{ asset('images/projects/'.$project->image) }}" alt="{{ $project->title}}"></a>@if($project->upcoming_project == '1')<span class="upcoming">upcoming project</span> @endif
+            <img class="card-img-top" src="{{ asset('images/projects/'.$project->image) }}" alt="{{ $project->title}}" width="100%" height="250"></a>@if($project->upcoming_project == '1')<span class="upcoming">upcoming project</span> @endif
         <div class="card-body">
           <h5 class="card-title"><a href="{{route('frontend.projectdetail',$project->slug)}}">{{ $project->title}}</a></h5>
           <p class="card-text">{!! substr($project->description, 0,65)!!} [...]</p>
